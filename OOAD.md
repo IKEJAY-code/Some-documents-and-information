@@ -171,3 +171,176 @@
 - 这些动作:
   1. 不但应该包含正常情况下的各种动作序列
   2. 而且应包含对非正常情况时软件系统的动作系列的描述, Exception/Alternate
+![](/image/7.jpg)
+
+#### 2.3 寻找用例
+- 1.参与者希望系统提供什么功能
+- 2.系统是否存储和检索信息
+- 3.当系统改变状态时,是否通知参与者
+- 4.是否存在影响系统的外部事件,是哪个参与者通知系统这些外部事件
+- 5.哪个参与者触发了活动
+**每个用例都有一个名称:**
+  - 短小精悍的动名词,如:取钱,存钱
+
+#### 2.4 用例图中的关系
+- **关联关系**
+  - 1. 用例之间的关系
+  - 2. 用例之间的关系是一种关联关系
+  - 3. 用例之间的关系是一种依赖关系(extend)
+  - 4. 用例之间的关系是一种泛化关系:如下订单和网上下订单
+  - 5. 用例之间的关系是一种包含关系(include)
+#### 2.5用例描述
+![](/image/8.jpg)
+#### 2.6用例模型 Usecase Model
+- 用例模型包括:
+  - 系统边界
+  - 参与者
+  - 用例
+  - 用例图
+  - 用例描述
+### 2.3.1 活动图
+#### 3.1 活动图的定义:
+- **活动图描述了在一个过程中,顺序的/并行的活动及其之间的关系**
+- **活动图是定点和弧的集合**
+![](/image/9.jpg)
+#### 3.2 活动图的元素
+![](/image/10.jpg)
+
+### 2.4.1 类图
+#### 4.1 类图的定义
+#### 4.2 类图的元素
+![](/image/11.jpg)
+#### 4.3 类图:问题的引出?
+- 1.有多少个类
+- 2.每个类需要定义多少属性
+- 3.每个类需要定义多少操作?
+- 4.类之间的关系
+- 5.类之间的信息交互,如何完成复杂功能的?
+#### 4.4 UML中类的表示
+- **类的图形表示**
+![](/image/12.jpg)
+#### 4.5 类元素的命名
+- 类的命名
+    - 类名中每个词的第一个字母通常要大写
+- 操作的命名
+    - 操作名 除第一个词之外的每个词的第一个字母要大写
+    - 例如:selectCourse()
+- 属性的命名
+    - 属性名 除第一个单词之外的每个词的第一个字母要大写
+    - 例如:courseName
+#### 4.6 关联关系的修饰
+![](/image/13.jpg)
+- 多重性Multiplicity
+![](/image/14.jpg)
+- 聚合/组合
+![](/image/15.jpg)
+#### 4.7关联类:Association class
+- Association class is an association that is also a class,and consists of the class,association the dashed line
+  - It may have attributes,operations and relationships
+  - You can use an association class when there is exactly one unique link between any pair of objects at any point in the time
+  - If a pair of objects may have many links to each other at a given point in time,then you reify the relationship by replacing it with a normal class
+#### 4.8 案例
+![](/image/16.jpg)
+### 2.5.1 顺序图
+- 交互图
+- 通信图
+#### 5.1 问题的提出?
+![](/image/17.jpg)
+#### 5.2 相关概念
+- 交互
+  - 对象之间为实现某一功能而必须实施的协作过程、动态行为,称为交互
+- 消息
+  - 对象间的协作与交流表现为一个对象以某种方式启动另一个对象的活动,这种交流载UML被定义为消息
+- 顺序图的建模元素
+  - 对象或角色
+  - 参与者
+  - 消息
+- 交互图
+#### 5.3 交互的基本概念 -- 消息
+- 同步消息
+- 异步消息
+#### 5.4 顺序图:交互图的一种
+- 关于操作:operation
+![](/image/18.jpg)
+#### 5.5 代码和顺序图的映射
+![](/image/19.jpg)
+### 2.6.1 通信图
+- 通信图强调对象之间的结构关系
+- 顺序图强调 随着时间的推移,各对象是如何交互的
+#### 6.1 通信图
+![](/image/20.jpg)
+#### 6.2 通信图和顺序图的区别
+### 2.7.1 状态图
+#### 7.1 问题的引出
+![](/image/21.jpg)
+#### 7.2 状态图的基本概念
+- 状态(state)
+  - 是对象的生命期中的一个条件或状况
+  - 在此期间,对象可以响应事件、执行某活动
+  - 例如 灯 有几个状态
+- 状态机(state machine)
+  - 是一种行为
+  - 说明对象在它的生命期中,响应事件所经历的状态序列 以及他们对每个事件的响应
+- 状态图(state diagram,state Chart):
+  - 状态及可以用状态图来可视化
+  - 状态图显示了一个状态及,它强调从状态到状态的控制流
+- 状态有以下几个部分组成
+  - 名称(name)
+    - 每个单词首字母大写
+  - 进入/退出动作(entry/exit action)
+  - 内部迁移(internal transition)
+  - 子状态(substate)
+  - 延迟事件(deferred event)
+- 事件(event)
+    - 是对一个在时间和空间上占有一定位置的有意义的事物的描述
+      - 在状态及的语境中,一个时间是一个激励的发生,它能够出发一个状态迁移
+    - UML对四种时间进行建模
+      - 参量变化 change event
+      - 信号signal(异步)
+      - 信号call(同步)
+      - 时间事件time event
+        - 时间时间 是表示一段时间的推移
+          - 用关键字after 后面跟着事件表达式
+          - 用关键字at 表示某个绝对时间点上发生的时间事件
+        - 变化事件 表示状态的一个变化或某些条件得到满足的事件
+          - 用关键字when后跟一个布尔表达式,当条件满足,则引发变化事件
+- 迁移Transition
+  - 在状态A,发生事件并满足一定条件,转到状态B
+  - 一个迁移由5部分组成
+    - 源状态 Source state
+    - 事件触发器 event trigger(触发事件名称)
+    - 触发条件 guard condition
+    - 效应(effect)(或者,迁移动作)
+      - 可执行的动作
+    - 目标状态
+- 特殊的迁移
+    - 自身迁移 self transition
+    - 内部迁移 internal transition
+
+#### 7.3 状态图的建模元素
+
+![](/image/22.jpg)
+#### 7.4 理解状态图
+
+#### 7.5 状态图建模
+
+- 建模步骤
+  - 1.选择对象及视点
+  - 2.定义对象在生命周期内可能存在的状态
+  - 3.在每种状态下可接受的事件以及将要转去的新状态
+#### 7.6 比较状态图与交互图、活动图
+
+![](/image/23.jpg)
+### 3.1.1 面向对象分析与设计概览
+
+#### OOAD Overview
+![](/image/24.jpg)
+![](/image/25.jpg)
+- 课程的关键Key importance
+    - 通用职责分配模式
+    - Follows GRASP principle
+      - General Responsibilities Assignment Software Patterns
+- What is implement
+- What is deployment
+- Relationship of the Analysis and Design
+  - “do the right thing(Analysis),and do the thing right(design)”
